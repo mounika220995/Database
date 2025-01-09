@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[3]:
 
 
 import pandas as pd
@@ -15,6 +15,9 @@ def load_data():
     return pd.read_excel("soft_material_properties_sample.xlsx")
 
 data = load_data()
+
+# Title
+st.title("The Dynamic Database of Molecular transport properties in Soft materials")
 
 # Sidebar for user input
 st.sidebar.header("Explore the Database:")
@@ -41,7 +44,7 @@ particle_filter = st.sidebar.multiselect(
 )
 
 # Additional input for custom particle size and permeability
-st.sidebar.header("Custom Data Point:")
+st.sidebar.header("User Input:")
 custom_particle_size = st.sidebar.number_input("Enter Particle Size", min_value=0.0, value=1.0)
 custom_permeability = st.sidebar.number_input("Enter Permeability", min_value=0.0, value=1.0)
 
