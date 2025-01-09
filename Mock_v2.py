@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[2]:
 
 
 import pandas as pd
@@ -16,8 +16,8 @@ def load_data():
 
 data = load_data()
 
-# Title
-st.title("The Dynamic Database of Molecular transport properties in Soft materials")
+# Title and Header in comparable sizes using Markdown
+st.markdown("<h1 style='text-align: center; font-size: 36px;'>The Dynamic Database of Molecular Transport Properties in Soft Materials</h1>", unsafe_allow_html=True)
 
 # Sidebar for user input
 st.sidebar.header("Explore the Database:")
@@ -52,7 +52,7 @@ custom_permeability = st.sidebar.number_input("Enter Permeability", min_value=0.
 filtered_data = data[data["Particle_Used"].isin(particle_filter)]
 
 # Main visualization
-st.header("Interactive Visualization")
+st.markdown("<h2 style='text-align: center; font-size: 30px;'>Interactive Visualization</h2>", unsafe_allow_html=True)
 
 if x_axis and y_axis:
     # Base scatter plot with existing data
