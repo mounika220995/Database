@@ -14,13 +14,13 @@ from openpyxl import Workbook
 @st.cache_data
 def load_uploaded_data():
     try:
-        return pd.read_excel("D:/OneDrive - Michigan State University/Dr.Shaoting Lin's project/Soft Materials Database/uploaded_data.xlsx")
+        return pd.read_excel("uploaded_data.xlsx")
     except FileNotFoundError:
         return pd.DataFrame(columns=["Paper DOI", "Particle_Used", "Particle_Size", "Aspect_Ratio", "Diffusivity", 
                                      "Permeability", "Polymer Network Mesh Size", "Specificity"])
 
 # Save new data to uploaded_data.xlsx
-def save_to_excel(data, file_name="D:/OneDrive - Michigan State University/Dr.Shaoting Lin's project/Soft Materials Database/uploaded_data.xlsx"):
+def save_to_excel(data, file_name="uploaded_data.xlsx"):
     df = pd.DataFrame(data)
     try:
         existing_data = pd.read_excel(file_name)
